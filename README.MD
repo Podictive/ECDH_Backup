@@ -33,6 +33,8 @@
 2) Regenerate AES_ENCRYPTION_KEY using your RECV_PRIV and TEMP_PUB (aka filename.encrypted.pubkey)  
 3) Decrypt the contents using AES_ENCRYPTION_KEY
 4) Make sure the contents match what you expect
-     => It may be theoretically possible an attacker changes filename.encrypted.pubkey
-	 => The ECDH will then create a different AES_ENCRYPTION_KEY, and decryption using
-	 => that key may result in a possible malicious plaintext ! 
+```
+     It may be theoretically possible an attacker changes filename.encrypted.pubkey
+     The ECDH will then create a different AES_ENCRYPTION_KEY, and decryption using
+     that key may result in a possible malicious plaintext ! 
+```
