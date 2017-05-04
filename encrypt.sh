@@ -21,8 +21,9 @@ if [[ "$1" == "-h" || "$#" -ne 4 ]] ; then
     echo " filename.encrypted.signed      V   the signed MAC. Verifies the file actually comes from the backup machine and the MAC has not been changed. Uses SEN_PRIV to sign."
     echo ""
     echo "The encryption process is explained on the wiki (Or ask Machiel)."
-    echo "The only requirements for decryption is backup.pem, filename.encrypted and filename.encrypted.pubkey. "
-    echo "The other files are used to verify the encrypted contents has not been changed and the origin of the encrypted files."
+    echo "The only requirements for decryption is RECV_PRIV.pem, filename.encrypted and filename.encrypted.pubkey (TEMP_PUB). "
+    echo "filename.encrypted.signed is used to verify the encrypted contents has not been changed and the origin of the encrypted files."
+    echo "Note, the pubkey is not signed."
     exit 0
 fi
 
